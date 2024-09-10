@@ -1,0 +1,16 @@
+import imaplib
+
+def test_connection():
+    email_address = "4mt21ic013@mite.ac.in"
+    email_password = "$Disha1234"  # Replace with your actual app password
+    
+    try:
+        mail = imaplib.IMAP4_SSL('imap.gmail.com')
+        mail.login(email_address, email_password)
+        print("Login successful!")
+        mail.logout()
+    except imaplib.IMAP4.error as e:
+        print(f"Failed to login: {e}")
+
+if __name__ == "__main__":
+    test_connection()
